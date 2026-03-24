@@ -1,0 +1,8 @@
+detectron2/
+mydata/output/**/model_*.pth
+mydata/output/**/*.pth
+mydata/output/**/*.pt
+mydata/output/**/*.ckpt
+mydata/output/**/*.onnx
+mydata/coco/*.json
+*.log

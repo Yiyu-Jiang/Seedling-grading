@@ -1,0 +1,32 @@
+_BASE_: "/ssd/home/jiangyiyu/unit3code/detectron2/AdelaiDet/configs/BlendMask/550_R_50_dcni3_5x.yaml"
+
+DATASETS:
+  TRAIN: ("lettuce_train",)
+  TEST: ("lettuce_val",)
+
+MODEL:
+  # you can override weights later via CLI opts MODEL.WEIGHTS ...
+  ROI_HEADS:
+    NUM_CLASSES: 1
+  FCOS:
+    NUM_CLASSES: 1
+  BASIS_MODULE:
+    # 对于自定义数据集，我们没有提前生成 AdelaiDet BlendMask 的 basis supervision (.npz)。
+    # 关闭该 loss 后，数据加载将不再尝试读取同名 .npz 文件。
+    LOSS_ON: False
+
+DATALOADER:
+  # many small images; keeping small workers helps.
+  NUM_WORKERS: 2
+
+SOLVER:
+  IMS_PER_BATCH: 8
+  BASE_LR: 0.002
+  MAX_ITER: 2000
+  STEPS: (1500, 1800)
+  CHECKPOINT_PERIOD: 500
+
+TEST:
+  EVAL_PERIOD: 500
+
+OUTPUT_DIR: "/ssd/home/jiangyiyu/unit3code/mydata/output/blendmask_lettuce_550_R50"

@@ -1,0 +1,8 @@
+读取步骤5 中生成的标注文件和对应的图像，并将其转换/导入到X-AnyLabeling中训练得到自动标注权重，
+再将 /ldap_shared/home/t_jyy/ssd/home/jiangyiyu/unit3code/mydata/org_img_label 中的图像按长宽各压缩1倍，
+将压缩后的图像裁剪为 12 张 512×512 子图，并采用重叠裁剪策略，以避免边界幼苗被截断；
+当边缘区域不足 512×512 时，使用 padding 进行补齐。
+把这些图像送入 X-AnyLabeling 中导入自动标注权重，开始自动标注。
+待全部实例分割标注完成后，再自动将 org_img_label 中的图像和 JSON 标注统一转换为 COCO 格式，
+输出完整的 COCO 标注文件和日志。要求转换过程中保持 X-AnyLabeling 格式兼容，
+并正确保留 polygon、bbox 和类别信息。同时生成标注覆盖在矫正图像上的 overlay 图，用于验证标注是否正确对齐。

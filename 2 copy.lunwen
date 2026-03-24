@@ -1,0 +1,45 @@
+步骤4.读取 /ldap_shared/home/t_jyy/ssd/home/jiangyiyu/unit3code/mydata/step2_jiaozheng 
+已有的标注文件*_corrected.jpg和对应的矫正后图像*_corrected.json。
+由于原始图像尺寸过大，无法直接用于网络训练，需先将原始图像按长宽各压缩1倍。
+随后，将压缩后的图像裁剪为 12 张 512×512 子图，并采用重叠裁剪策略，以避免边界幼苗被截断；
+当边缘区域不足 512×512 时，使用 padding 进行补齐。
+裁剪过程中需同步更新并生成对应子图的标注文件，
+最终统一转换为 Detectron2 可直接训练的 COCO 格式数据集。
+
+
+步骤5.执行步骤1后的数据执行在线数据增强，
+包括随机旋转、平移、翻转、仿射变换、亮度/对比度扰动、随机遮挡等操作。
+旋转的空白处采用使用 padding 进行补齐，单次增强可随机执行其中任意一种或多种操作，
+单张图片至少增强5次,整体增强结果应覆盖上述所有增强类型。
+增强过程需保证图像与实例标注同步变换，且图片padding处不要有标注信息。确保增强后图像与对应标注信息保持一致。
+
+
+步骤6.将/ldap_shared/home/t_jyy/ssd/home/jiangyiyu/unit3code/mydata/step5_augmented
+数据送入模型中进行训练， /ssd/home/jiangyiyu/unit3code/detectron2 
+和 AdelaiDet 中的代码完成实例分割实验，在tmux内分别用2个GPU  训练次数40000次，学习率0.005，
+在相同的配置下并行同时训练 BlendMask-R50、Mask R-CNN-R50、
+TensorMask-R50，保留最优权重 。
+
+步骤7.步骤6的训练结果在/ldap_shared/home/t_jyy/ssd/home/jiangyiyu/unit3code/mydata/output，
+，并统一输出BlendMask-R50、Mask R-CNN-R50、TensorMask-R50算法的IOU、Precision、Recall、F1、mAP、AP、AP50、AP75、
+APs、APm、APl、推理时间，以及损失函数曲线到同一结果文件。
+将/ssd/home/jiangyiyu/unit3code/mydata/standardized_step1_half/merged/images/IMG_20230613_200341_r0_c1.jpg
+送入BlendMask-R50、Mask R-CNN-R50、TensorMask-R50三个训练后的算法，得到的可视化分割结果
+
+步骤8.在 BlendMask 框架内进一步完成 backbone 对比实验，其他运行配置相同的情况下在tmux内2卡并行，
+训练次数40000次，学习率0.005，IMS_PER_BATCH = 4
+分别测试R_50_3x.yaml、R_101_3x.yaml、 550_R_50_3x.yaml、550_R_50_dcni3_5x.yaml、
+R_101_dcni3_5x.yaml、RT_R_50_4x_bn-head_syncbn_shtw.yaml 等配置，并将实验结果统一保存，便于比较不同 backbone 
+的影响。
+
+步骤9.将步骤8的六个训练输出结果 Precision、Recall、F1、AP、AP50、AP75 及推理时间
+整合到一个文件和将每个训练的损失下降曲线到同一结果文件夹，将
+/ssd/home/jiangyiyu/unit3code/mydata/org_img_label/
+中任意一张的初始图经过步骤1、2的处理，
+送入步骤5的六个训练后的算法，分别得到的可视化结果
+
+步骤10.对比BlendMask-R50、Mask R-CNN-R50、TensorMask-R50，以及BlendMask-R50分别采用
+R_50_3x.yaml、R_101_3x.yaml、 550_R_50_3x.yaml、550_R_50_dcni3_5x.yaml、
+R_101_dcni3_5x.yaml、RT_R_50_4x_bn-head_syncbn_shtw.yaml预测，
+再运行home/jiangyiyu/unit3code/step7_run_gpt.py进行拼接
+

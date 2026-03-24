@@ -1,0 +1,29 @@
+_BASE_: "/ssd/home/jiangyiyu/unit3code/detectron2/AdelaiDet/configs/BlendMask/R_50_3x.yaml"
+
+DATASETS:
+  TRAIN: ("lettuce_train",)
+  TEST: ("lettuce_val",)
+
+MODEL:
+  ROI_HEADS:
+    NUM_CLASSES: 1
+  FCOS:
+    NUM_CLASSES: 1
+  BASIS_MODULE:
+    LOSS_ON: False
+
+DATALOADER:
+  NUM_WORKERS: 2
+
+SOLVER:
+  IMS_PER_BATCH: 4
+  BASE_LR: 0.005
+  MAX_ITER: 20000
+  STEPS: (14000, 18000)
+  WARMUP_ITERS: 1000
+  CHECKPOINT_PERIOD: 1000
+
+TEST:
+  EVAL_PERIOD: 1000
+
+OUTPUT_DIR: "/ssd/home/jiangyiyu/unit3code/mydata/output/blendmask_step5_R_50_3x"

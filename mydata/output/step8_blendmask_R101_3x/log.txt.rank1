@@ -1,0 +1,893 @@
+[03/20 14:31:03] detectron2 INFO: Rank of current process: 1. World size: 2
+[03/20 14:31:04] detectron2 INFO: Environment info:
+----------------------  --------------------------------------------------------------------------------------------------------
+sys.platform            linux
+Python                  3.8.20 | packaged by conda-forge | (default, Sep 30 2024, 17:52:49) [GCC 13.3.0]
+numpy                   1.24.4
+detectron2              0.6 @/ldap_shared/home/t_jyy/miniconda3/envs/detectron2/lib/python3.8/site-packages/detectron2
+Compiler                GCC 9.4
+CUDA compiler           CUDA 12.1
+detectron2 arch flags   8.9
+DETECTRON2_ENV_MODULE   <not set>
+PyTorch                 2.1.2+cu121 @/ldap_shared/home/t_jyy/miniconda3/envs/detectron2/lib/python3.8/site-packages/torch
+PyTorch debug build     False
+GPU available           Yes
+GPU 0,1                 NVIDIA GeForce RTX 4090 (arch=8.9)
+Driver version          550.54.15
+CUDA_HOME               /usr/local/cuda
+Pillow                  9.5.0
+torchvision             0.16.2+cu121 @/ldap_shared/home/t_jyy/miniconda3/envs/detectron2/lib/python3.8/site-packages/torchvision
+torchvision arch flags  5.0, 6.0, 7.0, 7.5, 8.0, 8.6, 9.0
+fvcore                  0.1.5.post20221221
+iopath                  0.1.9
+cv2                     4.13.0
+----------------------  --------------------------------------------------------------------------------------------------------
+PyTorch built with:
+  - GCC 9.3
+  - C++ Version: 201703
+  - Intel(R) oneAPI Math Kernel Library Version 2022.2-Product Build 20220804 for Intel(R) 64 architecture applications
+  - Intel(R) MKL-DNN v3.1.1 (Git Hash 64f6bcbcbab628e96f33a62c3e975f8535a7bde4)
+  - OpenMP 201511 (a.k.a. OpenMP 4.5)
+  - LAPACK is enabled (usually provided by MKL)
+  - NNPACK is enabled
+  - CPU capability usage: AVX512
+  - CUDA Runtime 12.1
+  - NVCC architecture flags: -gencode;arch=compute_50,code=sm_50;-gencode;arch=compute_60,code=sm_60;-gencode;arch=compute_70,code=sm_70;-gencode;arch=compute_75,code=sm_75;-gencode;arch=compute_80,code=sm_80;-gencode;arch=compute_86,code=sm_86;-gencode;arch=compute_90,code=sm_90
+  - CuDNN 8.9.2
+  - Magma 2.6.1
+  - Build settings: BLAS_INFO=mkl, BUILD_TYPE=Release, CUDA_VERSION=12.1, CUDNN_VERSION=8.9.2, CXX_COMPILER=/opt/rh/devtoolset-9/root/usr/bin/c++, CXX_FLAGS= -D_GLIBCXX_USE_CXX11_ABI=0 -fabi-version=11 -fvisibility-inlines-hidden -DUSE_PTHREADPOOL -DNDEBUG -DUSE_KINETO -DLIBKINETO_NOROCTRACER -DUSE_FBGEMM -DUSE_QNNPACK -DUSE_PYTORCH_QNNPACK -DUSE_XNNPACK -DSYMBOLICATE_MOBILE_DEBUG_HANDLE -O2 -fPIC -Wall -Wextra -Werror=return-type -Werror=non-virtual-dtor -Werror=bool-operation -Wnarrowing -Wno-missing-field-initializers -Wno-type-limits -Wno-array-bounds -Wno-unknown-pragmas -Wno-unused-parameter -Wno-unused-function -Wno-unused-result -Wno-strict-overflow -Wno-strict-aliasing -Wno-stringop-overflow -Wno-psabi -Wno-error=pedantic -Wno-error=old-style-cast -Wno-invalid-partial-specialization -Wno-unused-private-field -Wno-aligned-allocation-unavailable -Wno-missing-braces -fdiagnostics-color=always -faligned-new -Wno-unused-but-set-variable -Wno-maybe-uninitialized -fno-math-errno -fno-trapping-math -Werror=format -Werror=cast-function-type -Wno-stringop-overflow, LAPACK_INFO=mkl, PERF_WITH_AVX=1, PERF_WITH_AVX2=1, PERF_WITH_AVX512=1, TORCH_DISABLE_GPU_ASSERTS=ON, TORCH_VERSION=2.1.2, USE_CUDA=ON, USE_CUDNN=ON, USE_EXCEPTION_PTR=1, USE_GFLAGS=OFF, USE_GLOG=OFF, USE_MKL=ON, USE_MKLDNN=ON, USE_MPI=OFF, USE_NCCL=1, USE_NNPACK=ON, USE_OPENMP=ON, USE_ROCM=OFF, 
+
+[03/20 14:31:04] detectron2 INFO: Command line arguments: Namespace(config_file='/ldap_shared/home/t_jyy/ssd/home/jiangyiyu/unit3code/mydata/configs_step8/blendmask_R101_3x.yaml', dist_url='tcp://127.0.0.1:29702', eval_only=False, machine_rank=0, num_gpus=2, num_machines=1, opts=[], resume=False)
+[03/20 14:31:04] detectron2 INFO: Contents of args.config_file=/ldap_shared/home/t_jyy/ssd/home/jiangyiyu/unit3code/mydata/configs_step8/blendmask_R101_3x.yaml:
+_BASE_: "/ldap_shared/home/t_jyy/ssd/home/jiangyiyu/unit3code/detectron2/AdelaiDet/configs/BlendMask/R_101_3x.yaml"
+DATASETS:
+  TRAIN: ("lettuce_train",)
+  TEST: ("lettuce_val",)
+MODEL:
+  ROI_HEADS:
+    NUM_CLASSES: 1
+  FCOS:
+    NUM_CLASSES: 1
+  BASIS_MODULE:
+    LOSS_ON: False
+DATALOADER:
+  NUM_WORKERS: 4
+SOLVER:
+  IMS_PER_BATCH: 4
+  BASE_LR: 0.005
+  MAX_ITER: 40000
+  STEPS: (28000, 36000)
+  WARMUP_ITERS: 1000
+  CHECKPOINT_PERIOD: 5000
+TEST:
+  EVAL_PERIOD: 5000
+OUTPUT_DIR: "/ldap_shared/home/t_jyy/ssd/home/jiangyiyu/unit3code/mydata/output/step8_blendmask_R101_3x"
+
+[03/20 14:31:05] detectron2.utils.env INFO: Using a generated random seed 8711515
+[03/20 14:31:06] detectron2.engine.defaults INFO: Model:
+BlendMask(
+  (backbone): FPN(
+    (fpn_lateral3): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1))
+    (fpn_output3): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (fpn_lateral4): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1))
+    (fpn_output4): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (fpn_lateral5): Conv2d(2048, 256, kernel_size=(1, 1), stride=(1, 1))
+    (fpn_output5): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (top_block): LastLevelP6P7(
+      (p6): Conv2d(256, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+      (p7): Conv2d(256, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+    )
+    (bottom_up): ResNet(
+      (stem): BasicStem(
+        (conv1): Conv2d(
+          3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False
+          (norm): FrozenBatchNorm2d(num_features=64, eps=1e-05)
+        )
+      )
+      (res2): Sequential(
+        (0): BottleneckBlock(
+          (shortcut): Conv2d(
+            64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv1): Conv2d(
+            64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=64, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=64, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+        )
+        (1): BottleneckBlock(
+          (conv1): Conv2d(
+            256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=64, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=64, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+        )
+        (2): BottleneckBlock(
+          (conv1): Conv2d(
+            256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=64, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=64, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+        )
+      )
+      (res3): Sequential(
+        (0): BottleneckBlock(
+          (shortcut): Conv2d(
+            256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False
+            (norm): FrozenBatchNorm2d(num_features=512, eps=1e-05)
+          )
+          (conv1): Conv2d(
+            256, 128, kernel_size=(1, 1), stride=(2, 2), bias=False
+            (norm): FrozenBatchNorm2d(num_features=128, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=128, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=512, eps=1e-05)
+          )
+        )
+        (1): BottleneckBlock(
+          (conv1): Conv2d(
+            512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=128, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=128, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=512, eps=1e-05)
+          )
+        )
+        (2): BottleneckBlock(
+          (conv1): Conv2d(
+            512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=128, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=128, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=512, eps=1e-05)
+          )
+        )
+        (3): BottleneckBlock(
+          (conv1): Conv2d(
+            512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=128, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=128, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=512, eps=1e-05)
+          )
+        )
+      )
+      (res4): Sequential(
+        (0): BottleneckBlock(
+          (shortcut): Conv2d(
+            512, 1024, kernel_size=(1, 1), stride=(2, 2), bias=False
+            (norm): FrozenBatchNorm2d(num_features=1024, eps=1e-05)
+          )
+          (conv1): Conv2d(
+            512, 256, kernel_size=(1, 1), stride=(2, 2), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=1024, eps=1e-05)
+          )
+        )
+        (1): BottleneckBlock(
+          (conv1): Conv2d(
+            1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=1024, eps=1e-05)
+          )
+        )
+        (2): BottleneckBlock(
+          (conv1): Conv2d(
+            1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=1024, eps=1e-05)
+          )
+        )
+        (3): BottleneckBlock(
+          (conv1): Conv2d(
+            1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=1024, eps=1e-05)
+          )
+        )
+        (4): BottleneckBlock(
+          (conv1): Conv2d(
+            1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=1024, eps=1e-05)
+          )
+        )
+        (5): BottleneckBlock(
+          (conv1): Conv2d(
+            1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=1024, eps=1e-05)
+          )
+        )
+        (6): BottleneckBlock(
+          (conv1): Conv2d(
+            1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=1024, eps=1e-05)
+          )
+        )
+        (7): BottleneckBlock(
+          (conv1): Conv2d(
+            1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=1024, eps=1e-05)
+          )
+        )
+        (8): BottleneckBlock(
+          (conv1): Conv2d(
+            1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=1024, eps=1e-05)
+          )
+        )
+        (9): BottleneckBlock(
+          (conv1): Conv2d(
+            1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=1024, eps=1e-05)
+          )
+        )
+        (10): BottleneckBlock(
+          (conv1): Conv2d(
+            1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=1024, eps=1e-05)
+          )
+        )
+        (11): BottleneckBlock(
+          (conv1): Conv2d(
+            1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=1024, eps=1e-05)
+          )
+        )
+        (12): BottleneckBlock(
+          (conv1): Conv2d(
+            1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=1024, eps=1e-05)
+          )
+        )
+        (13): BottleneckBlock(
+          (conv1): Conv2d(
+            1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=1024, eps=1e-05)
+          )
+        )
+        (14): BottleneckBlock(
+          (conv1): Conv2d(
+            1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=1024, eps=1e-05)
+          )
+        )
+        (15): BottleneckBlock(
+          (conv1): Conv2d(
+            1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=1024, eps=1e-05)
+          )
+        )
+        (16): BottleneckBlock(
+          (conv1): Conv2d(
+            1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=1024, eps=1e-05)
+          )
+        )
+        (17): BottleneckBlock(
+          (conv1): Conv2d(
+            1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=1024, eps=1e-05)
+          )
+        )
+        (18): BottleneckBlock(
+          (conv1): Conv2d(
+            1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=1024, eps=1e-05)
+          )
+        )
+        (19): BottleneckBlock(
+          (conv1): Conv2d(
+            1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=1024, eps=1e-05)
+          )
+        )
+        (20): BottleneckBlock(
+          (conv1): Conv2d(
+            1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=1024, eps=1e-05)
+          )
+        )
+        (21): BottleneckBlock(
+          (conv1): Conv2d(
+            1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=1024, eps=1e-05)
+          )
+        )
+        (22): BottleneckBlock(
+          (conv1): Conv2d(
+            1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=256, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=1024, eps=1e-05)
+          )
+        )
+      )
+      (res5): Sequential(
+        (0): BottleneckBlock(
+          (shortcut): Conv2d(
+            1024, 2048, kernel_size=(1, 1), stride=(2, 2), bias=False
+            (norm): FrozenBatchNorm2d(num_features=2048, eps=1e-05)
+          )
+          (conv1): Conv2d(
+            1024, 512, kernel_size=(1, 1), stride=(2, 2), bias=False
+            (norm): FrozenBatchNorm2d(num_features=512, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=512, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=2048, eps=1e-05)
+          )
+        )
+        (1): BottleneckBlock(
+          (conv1): Conv2d(
+            2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=512, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=512, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=2048, eps=1e-05)
+          )
+        )
+        (2): BottleneckBlock(
+          (conv1): Conv2d(
+            2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=512, eps=1e-05)
+          )
+          (conv2): Conv2d(
+            512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=512, eps=1e-05)
+          )
+          (conv3): Conv2d(
+            512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False
+            (norm): FrozenBatchNorm2d(num_features=2048, eps=1e-05)
+          )
+        )
+      )
+    )
+  )
+  (proposal_generator): FCOS(
+    (fcos_head): FCOSHead(
+      (cls_tower): Sequential(
+        (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): GroupNorm(32, 256, eps=1e-05, affine=True)
+        (2): ReLU()
+        (3): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (4): GroupNorm(32, 256, eps=1e-05, affine=True)
+        (5): ReLU()
+        (6): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (7): GroupNorm(32, 256, eps=1e-05, affine=True)
+        (8): ReLU()
+        (9): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (10): GroupNorm(32, 256, eps=1e-05, affine=True)
+        (11): ReLU()
+      )
+      (bbox_tower): Sequential(
+        (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): GroupNorm(32, 256, eps=1e-05, affine=True)
+        (2): ReLU()
+        (3): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (4): GroupNorm(32, 256, eps=1e-05, affine=True)
+        (5): ReLU()
+        (6): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (7): GroupNorm(32, 256, eps=1e-05, affine=True)
+        (8): ReLU()
+        (9): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (10): GroupNorm(32, 256, eps=1e-05, affine=True)
+        (11): ReLU()
+      )
+      (share_tower): Sequential()
+      (cls_logits): Conv2d(256, 1, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (bbox_pred): Conv2d(256, 4, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (ctrness): Conv2d(256, 1, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (fcos_outputs): FCOSOutputs(
+      (loc_loss_func): IOULoss()
+    )
+  )
+  (basis_module): ProtoNet(
+    (refine): ModuleList(
+      (0-2): 3 x Sequential(
+        (0): Conv2d(256, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): SyncBatchNorm(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace=True)
+      )
+    )
+    (tower): Sequential(
+      (0): Sequential(
+        (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): SyncBatchNorm(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace=True)
+      )
+      (1): Sequential(
+        (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): SyncBatchNorm(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace=True)
+      )
+      (2): Sequential(
+        (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): SyncBatchNorm(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace=True)
+      )
+      (3): Upsample(scale_factor=2.0, mode='bilinear')
+      (4): Sequential(
+        (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): SyncBatchNorm(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace=True)
+      )
+      (5): Conv2d(128, 4, kernel_size=(1, 1), stride=(1, 1))
+    )
+  )
+  (top_layer): Conv2d(256, 784, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+)
+[03/20 14:31:06] detectron2.data.dataset_mapper INFO: [DatasetMapper] Augmentations used in training: [ResizeShortestEdge(short_edge_length=(640, 672, 704, 736, 768, 800), max_size=1333, sample_style='choice'), RandomFlip()]
+[03/20 14:31:06] adet.data.dataset_mapper INFO: Rebuilding the augmentations. The previous augmentations will be overridden.
+[03/20 14:31:06] adet.data.detection_utils INFO: Augmentations used in training: [ResizeShortestEdge(short_edge_length=(640, 672, 704, 736, 768, 800), max_size=1333, sample_style='choice'), RandomFlip()]
+[03/20 14:31:07] detectron2.data.datasets.coco INFO: Loading /ldap_shared/home/t_jyy/ssd/home/jiangyiyu/unit3code/mydata/step5_augmented/instances_train.json takes 1.48 seconds.
+[03/20 14:31:07] detectron2.data.datasets.coco INFO: Loaded 756 images in COCO format from /ldap_shared/home/t_jyy/ssd/home/jiangyiyu/unit3code/mydata/step5_augmented/instances_train.json
+[03/20 14:31:07] detectron2.data.build INFO: Removed 0 images with no usable annotations. 756 images left.
+[03/20 14:31:07] detectron2.data.build INFO: Using training sampler TrainingSampler
+[03/20 14:31:07] detectron2.data.common INFO: Serializing 756 elements to byte tensors and concatenating them all ...
+[03/20 14:31:07] detectron2.data.common INFO: Serialized dataset takes 28.68 MiB
+[03/20 14:31:07] fvcore.common.checkpoint INFO: [Checkpointer] Loading from detectron2://ImageNetPretrained/MSRA/R-101.pkl ...
+[03/20 14:31:07] detectron2.checkpoint.c2_model_loading INFO: Renaming Caffe2 weights ......
+[03/20 14:31:08] detectron2.checkpoint.c2_model_loading INFO: Following weights matched with submodule backbone.bottom_up:
+| Names in Model    | Names in Checkpoint       | Shapes                                          |
+|:------------------|:--------------------------|:------------------------------------------------|
+| res2.0.conv1.*    | res2_0_branch2a_{bn_*,w}  | (64,) (64,) (64,) (64,) (64,64,1,1)             |
+| res2.0.conv2.*    | res2_0_branch2b_{bn_*,w}  | (64,) (64,) (64,) (64,) (64,64,3,3)             |
+| res2.0.conv3.*    | res2_0_branch2c_{bn_*,w}  | (256,) (256,) (256,) (256,) (256,64,1,1)        |
+| res2.0.shortcut.* | res2_0_branch1_{bn_*,w}   | (256,) (256,) (256,) (256,) (256,64,1,1)        |
+| res2.1.conv1.*    | res2_1_branch2a_{bn_*,w}  | (64,) (64,) (64,) (64,) (64,256,1,1)            |
+| res2.1.conv2.*    | res2_1_branch2b_{bn_*,w}  | (64,) (64,) (64,) (64,) (64,64,3,3)             |
+| res2.1.conv3.*    | res2_1_branch2c_{bn_*,w}  | (256,) (256,) (256,) (256,) (256,64,1,1)        |
+| res2.2.conv1.*    | res2_2_branch2a_{bn_*,w}  | (64,) (64,) (64,) (64,) (64,256,1,1)            |
+| res2.2.conv2.*    | res2_2_branch2b_{bn_*,w}  | (64,) (64,) (64,) (64,) (64,64,3,3)             |
+| res2.2.conv3.*    | res2_2_branch2c_{bn_*,w}  | (256,) (256,) (256,) (256,) (256,64,1,1)        |
+| res3.0.conv1.*    | res3_0_branch2a_{bn_*,w}  | (128,) (128,) (128,) (128,) (128,256,1,1)       |
+| res3.0.conv2.*    | res3_0_branch2b_{bn_*,w}  | (128,) (128,) (128,) (128,) (128,128,3,3)       |
+| res3.0.conv3.*    | res3_0_branch2c_{bn_*,w}  | (512,) (512,) (512,) (512,) (512,128,1,1)       |
+| res3.0.shortcut.* | res3_0_branch1_{bn_*,w}   | (512,) (512,) (512,) (512,) (512,256,1,1)       |
+| res3.1.conv1.*    | res3_1_branch2a_{bn_*,w}  | (128,) (128,) (128,) (128,) (128,512,1,1)       |
+| res3.1.conv2.*    | res3_1_branch2b_{bn_*,w}  | (128,) (128,) (128,) (128,) (128,128,3,3)       |
+| res3.1.conv3.*    | res3_1_branch2c_{bn_*,w}  | (512,) (512,) (512,) (512,) (512,128,1,1)       |
+| res3.2.conv1.*    | res3_2_branch2a_{bn_*,w}  | (128,) (128,) (128,) (128,) (128,512,1,1)       |
+| res3.2.conv2.*    | res3_2_branch2b_{bn_*,w}  | (128,) (128,) (128,) (128,) (128,128,3,3)       |
+| res3.2.conv3.*    | res3_2_branch2c_{bn_*,w}  | (512,) (512,) (512,) (512,) (512,128,1,1)       |
+| res3.3.conv1.*    | res3_3_branch2a_{bn_*,w}  | (128,) (128,) (128,) (128,) (128,512,1,1)       |
+| res3.3.conv2.*    | res3_3_branch2b_{bn_*,w}  | (128,) (128,) (128,) (128,) (128,128,3,3)       |
+| res3.3.conv3.*    | res3_3_branch2c_{bn_*,w}  | (512,) (512,) (512,) (512,) (512,128,1,1)       |
+| res4.0.conv1.*    | res4_0_branch2a_{bn_*,w}  | (256,) (256,) (256,) (256,) (256,512,1,1)       |
+| res4.0.conv2.*    | res4_0_branch2b_{bn_*,w}  | (256,) (256,) (256,) (256,) (256,256,3,3)       |
+| res4.0.conv3.*    | res4_0_branch2c_{bn_*,w}  | (1024,) (1024,) (1024,) (1024,) (1024,256,1,1)  |
+| res4.0.shortcut.* | res4_0_branch1_{bn_*,w}   | (1024,) (1024,) (1024,) (1024,) (1024,512,1,1)  |
+| res4.1.conv1.*    | res4_1_branch2a_{bn_*,w}  | (256,) (256,) (256,) (256,) (256,1024,1,1)      |
+| res4.1.conv2.*    | res4_1_branch2b_{bn_*,w}  | (256,) (256,) (256,) (256,) (256,256,3,3)       |
+| res4.1.conv3.*    | res4_1_branch2c_{bn_*,w}  | (1024,) (1024,) (1024,) (1024,) (1024,256,1,1)  |
+| res4.10.conv1.*   | res4_10_branch2a_{bn_*,w} | (256,) (256,) (256,) (256,) (256,1024,1,1)      |
+| res4.10.conv2.*   | res4_10_branch2b_{bn_*,w} | (256,) (256,) (256,) (256,) (256,256,3,3)       |
+| res4.10.conv3.*   | res4_10_branch2c_{bn_*,w} | (1024,) (1024,) (1024,) (1024,) (1024,256,1,1)  |
+| res4.11.conv1.*   | res4_11_branch2a_{bn_*,w} | (256,) (256,) (256,) (256,) (256,1024,1,1)      |
+| res4.11.conv2.*   | res4_11_branch2b_{bn_*,w} | (256,) (256,) (256,) (256,) (256,256,3,3)       |
+| res4.11.conv3.*   | res4_11_branch2c_{bn_*,w} | (1024,) (1024,) (1024,) (1024,) (1024,256,1,1)  |
+| res4.12.conv1.*   | res4_12_branch2a_{bn_*,w} | (256,) (256,) (256,) (256,) (256,1024,1,1)      |
+| res4.12.conv2.*   | res4_12_branch2b_{bn_*,w} | (256,) (256,) (256,) (256,) (256,256,3,3)       |
+| res4.12.conv3.*   | res4_12_branch2c_{bn_*,w} | (1024,) (1024,) (1024,) (1024,) (1024,256,1,1)  |
+| res4.13.conv1.*   | res4_13_branch2a_{bn_*,w} | (256,) (256,) (256,) (256,) (256,1024,1,1)      |
+| res4.13.conv2.*   | res4_13_branch2b_{bn_*,w} | (256,) (256,) (256,) (256,) (256,256,3,3)       |
+| res4.13.conv3.*   | res4_13_branch2c_{bn_*,w} | (1024,) (1024,) (1024,) (1024,) (1024,256,1,1)  |
+| res4.14.conv1.*   | res4_14_branch2a_{bn_*,w} | (256,) (256,) (256,) (256,) (256,1024,1,1)      |
+| res4.14.conv2.*   | res4_14_branch2b_{bn_*,w} | (256,) (256,) (256,) (256,) (256,256,3,3)       |
+| res4.14.conv3.*   | res4_14_branch2c_{bn_*,w} | (1024,) (1024,) (1024,) (1024,) (1024,256,1,1)  |
+| res4.15.conv1.*   | res4_15_branch2a_{bn_*,w} | (256,) (256,) (256,) (256,) (256,1024,1,1)      |
+| res4.15.conv2.*   | res4_15_branch2b_{bn_*,w} | (256,) (256,) (256,) (256,) (256,256,3,3)       |
+| res4.15.conv3.*   | res4_15_branch2c_{bn_*,w} | (1024,) (1024,) (1024,) (1024,) (1024,256,1,1)  |
+| res4.16.conv1.*   | res4_16_branch2a_{bn_*,w} | (256,) (256,) (256,) (256,) (256,1024,1,1)      |
+| res4.16.conv2.*   | res4_16_branch2b_{bn_*,w} | (256,) (256,) (256,) (256,) (256,256,3,3)       |
+| res4.16.conv3.*   | res4_16_branch2c_{bn_*,w} | (1024,) (1024,) (1024,) (1024,) (1024,256,1,1)  |
+| res4.17.conv1.*   | res4_17_branch2a_{bn_*,w} | (256,) (256,) (256,) (256,) (256,1024,1,1)      |
+| res4.17.conv2.*   | res4_17_branch2b_{bn_*,w} | (256,) (256,) (256,) (256,) (256,256,3,3)       |
+| res4.17.conv3.*   | res4_17_branch2c_{bn_*,w} | (1024,) (1024,) (1024,) (1024,) (1024,256,1,1)  |
+| res4.18.conv1.*   | res4_18_branch2a_{bn_*,w} | (256,) (256,) (256,) (256,) (256,1024,1,1)      |
+| res4.18.conv2.*   | res4_18_branch2b_{bn_*,w} | (256,) (256,) (256,) (256,) (256,256,3,3)       |
+| res4.18.conv3.*   | res4_18_branch2c_{bn_*,w} | (1024,) (1024,) (1024,) (1024,) (1024,256,1,1)  |
+| res4.19.conv1.*   | res4_19_branch2a_{bn_*,w} | (256,) (256,) (256,) (256,) (256,1024,1,1)      |
+| res4.19.conv2.*   | res4_19_branch2b_{bn_*,w} | (256,) (256,) (256,) (256,) (256,256,3,3)       |
+| res4.19.conv3.*   | res4_19_branch2c_{bn_*,w} | (1024,) (1024,) (1024,) (1024,) (1024,256,1,1)  |
+| res4.2.conv1.*    | res4_2_branch2a_{bn_*,w}  | (256,) (256,) (256,) (256,) (256,1024,1,1)      |
+| res4.2.conv2.*    | res4_2_branch2b_{bn_*,w}  | (256,) (256,) (256,) (256,) (256,256,3,3)       |
+| res4.2.conv3.*    | res4_2_branch2c_{bn_*,w}  | (1024,) (1024,) (1024,) (1024,) (1024,256,1,1)  |
+| res4.20.conv1.*   | res4_20_branch2a_{bn_*,w} | (256,) (256,) (256,) (256,) (256,1024,1,1)      |
+| res4.20.conv2.*   | res4_20_branch2b_{bn_*,w} | (256,) (256,) (256,) (256,) (256,256,3,3)       |
+| res4.20.conv3.*   | res4_20_branch2c_{bn_*,w} | (1024,) (1024,) (1024,) (1024,) (1024,256,1,1)  |
+| res4.21.conv1.*   | res4_21_branch2a_{bn_*,w} | (256,) (256,) (256,) (256,) (256,1024,1,1)      |
+| res4.21.conv2.*   | res4_21_branch2b_{bn_*,w} | (256,) (256,) (256,) (256,) (256,256,3,3)       |
+| res4.21.conv3.*   | res4_21_branch2c_{bn_*,w} | (1024,) (1024,) (1024,) (1024,) (1024,256,1,1)  |
+| res4.22.conv1.*   | res4_22_branch2a_{bn_*,w} | (256,) (256,) (256,) (256,) (256,1024,1,1)      |
+| res4.22.conv2.*   | res4_22_branch2b_{bn_*,w} | (256,) (256,) (256,) (256,) (256,256,3,3)       |
+| res4.22.conv3.*   | res4_22_branch2c_{bn_*,w} | (1024,) (1024,) (1024,) (1024,) (1024,256,1,1)  |
+| res4.3.conv1.*    | res4_3_branch2a_{bn_*,w}  | (256,) (256,) (256,) (256,) (256,1024,1,1)      |
+| res4.3.conv2.*    | res4_3_branch2b_{bn_*,w}  | (256,) (256,) (256,) (256,) (256,256,3,3)       |
+| res4.3.conv3.*    | res4_3_branch2c_{bn_*,w}  | (1024,) (1024,) (1024,) (1024,) (1024,256,1,1)  |
+| res4.4.conv1.*    | res4_4_branch2a_{bn_*,w}  | (256,) (256,) (256,) (256,) (256,1024,1,1)      |
+| res4.4.conv2.*    | res4_4_branch2b_{bn_*,w}  | (256,) (256,) (256,) (256,) (256,256,3,3)       |
+| res4.4.conv3.*    | res4_4_branch2c_{bn_*,w}  | (1024,) (1024,) (1024,) (1024,) (1024,256,1,1)  |
+| res4.5.conv1.*    | res4_5_branch2a_{bn_*,w}  | (256,) (256,) (256,) (256,) (256,1024,1,1)      |
+| res4.5.conv2.*    | res4_5_branch2b_{bn_*,w}  | (256,) (256,) (256,) (256,) (256,256,3,3)       |
+| res4.5.conv3.*    | res4_5_branch2c_{bn_*,w}  | (1024,) (1024,) (1024,) (1024,) (1024,256,1,1)  |
+| res4.6.conv1.*    | res4_6_branch2a_{bn_*,w}  | (256,) (256,) (256,) (256,) (256,1024,1,1)      |
+| res4.6.conv2.*    | res4_6_branch2b_{bn_*,w}  | (256,) (256,) (256,) (256,) (256,256,3,3)       |
+| res4.6.conv3.*    | res4_6_branch2c_{bn_*,w}  | (1024,) (1024,) (1024,) (1024,) (1024,256,1,1)  |
+| res4.7.conv1.*    | res4_7_branch2a_{bn_*,w}  | (256,) (256,) (256,) (256,) (256,1024,1,1)      |
+| res4.7.conv2.*    | res4_7_branch2b_{bn_*,w}  | (256,) (256,) (256,) (256,) (256,256,3,3)       |
+| res4.7.conv3.*    | res4_7_branch2c_{bn_*,w}  | (1024,) (1024,) (1024,) (1024,) (1024,256,1,1)  |
+| res4.8.conv1.*    | res4_8_branch2a_{bn_*,w}  | (256,) (256,) (256,) (256,) (256,1024,1,1)      |
+| res4.8.conv2.*    | res4_8_branch2b_{bn_*,w}  | (256,) (256,) (256,) (256,) (256,256,3,3)       |
+| res4.8.conv3.*    | res4_8_branch2c_{bn_*,w}  | (1024,) (1024,) (1024,) (1024,) (1024,256,1,1)  |
+| res4.9.conv1.*    | res4_9_branch2a_{bn_*,w}  | (256,) (256,) (256,) (256,) (256,1024,1,1)      |
+| res4.9.conv2.*    | res4_9_branch2b_{bn_*,w}  | (256,) (256,) (256,) (256,) (256,256,3,3)       |
+| res4.9.conv3.*    | res4_9_branch2c_{bn_*,w}  | (1024,) (1024,) (1024,) (1024,) (1024,256,1,1)  |
+| res5.0.conv1.*    | res5_0_branch2a_{bn_*,w}  | (512,) (512,) (512,) (512,) (512,1024,1,1)      |
+| res5.0.conv2.*    | res5_0_branch2b_{bn_*,w}  | (512,) (512,) (512,) (512,) (512,512,3,3)       |
+| res5.0.conv3.*    | res5_0_branch2c_{bn_*,w}  | (2048,) (2048,) (2048,) (2048,) (2048,512,1,1)  |
+| res5.0.shortcut.* | res5_0_branch1_{bn_*,w}   | (2048,) (2048,) (2048,) (2048,) (2048,1024,1,1) |
+| res5.1.conv1.*    | res5_1_branch2a_{bn_*,w}  | (512,) (512,) (512,) (512,) (512,2048,1,1)      |
+| res5.1.conv2.*    | res5_1_branch2b_{bn_*,w}  | (512,) (512,) (512,) (512,) (512,512,3,3)       |
+| res5.1.conv3.*    | res5_1_branch2c_{bn_*,w}  | (2048,) (2048,) (2048,) (2048,) (2048,512,1,1)  |
+| res5.2.conv1.*    | res5_2_branch2a_{bn_*,w}  | (512,) (512,) (512,) (512,) (512,2048,1,1)      |
+| res5.2.conv2.*    | res5_2_branch2b_{bn_*,w}  | (512,) (512,) (512,) (512,) (512,512,3,3)       |
+| res5.2.conv3.*    | res5_2_branch2c_{bn_*,w}  | (2048,) (2048,) (2048,) (2048,) (2048,512,1,1)  |
+| stem.conv1.norm.* | res_conv1_bn_*            | (64,) (64,) (64,) (64,)                         |
+| stem.conv1.weight | conv1_w                   | (64, 3, 7, 7)                                   |
+[03/20 14:31:08] fvcore.common.checkpoint WARNING: Some model parameters or buffers are not found in the checkpoint:
+backbone.fpn_lateral3.{bias, weight}
+backbone.fpn_lateral4.{bias, weight}
+backbone.fpn_lateral5.{bias, weight}
+backbone.fpn_output3.{bias, weight}
+backbone.fpn_output4.{bias, weight}
+backbone.fpn_output5.{bias, weight}
+backbone.top_block.p6.{bias, weight}
+backbone.top_block.p7.{bias, weight}
+basis_module.refine.0.0.weight
+basis_module.refine.0.1.{bias, running_mean, running_var, weight}
+basis_module.refine.1.0.weight
+basis_module.refine.1.1.{bias, running_mean, running_var, weight}
+basis_module.refine.2.0.weight
+basis_module.refine.2.1.{bias, running_mean, running_var, weight}
+basis_module.tower.0.0.weight
+basis_module.tower.0.1.{bias, running_mean, running_var, weight}
+basis_module.tower.1.0.weight
+basis_module.tower.1.1.{bias, running_mean, running_var, weight}
+basis_module.tower.2.0.weight
+basis_module.tower.2.1.{bias, running_mean, running_var, weight}
+basis_module.tower.4.0.weight
+basis_module.tower.4.1.{bias, running_mean, running_var, weight}
+basis_module.tower.5.{bias, weight}
+proposal_generator.fcos_head.bbox_pred.{bias, weight}
+proposal_generator.fcos_head.bbox_tower.0.{bias, weight}
+proposal_generator.fcos_head.bbox_tower.1.{bias, weight}
+proposal_generator.fcos_head.bbox_tower.10.{bias, weight}
+proposal_generator.fcos_head.bbox_tower.3.{bias, weight}
+proposal_generator.fcos_head.bbox_tower.4.{bias, weight}
+proposal_generator.fcos_head.bbox_tower.6.{bias, weight}
+proposal_generator.fcos_head.bbox_tower.7.{bias, weight}
+proposal_generator.fcos_head.bbox_tower.9.{bias, weight}
+proposal_generator.fcos_head.cls_logits.{bias, weight}
+proposal_generator.fcos_head.cls_tower.0.{bias, weight}
+proposal_generator.fcos_head.cls_tower.1.{bias, weight}
+proposal_generator.fcos_head.cls_tower.10.{bias, weight}
+proposal_generator.fcos_head.cls_tower.3.{bias, weight}
+proposal_generator.fcos_head.cls_tower.4.{bias, weight}
+proposal_generator.fcos_head.cls_tower.6.{bias, weight}
+proposal_generator.fcos_head.cls_tower.7.{bias, weight}
+proposal_generator.fcos_head.cls_tower.9.{bias, weight}
+proposal_generator.fcos_head.ctrness.{bias, weight}
+top_layer.{bias, weight}
+[03/20 14:31:08] fvcore.common.checkpoint WARNING: The checkpoint state_dict contains keys that are not used by the model:
+  fc1000.{bias, weight}
+[03/20 14:31:08] adet.trainer INFO: Starting training from iteration 0
+[03/20 14:51:09] detectron2.data.datasets.coco INFO: Loaded 162 images in COCO format from /ldap_shared/home/t_jyy/ssd/home/jiangyiyu/unit3code/mydata/step5_augmented/instances_val.json
+[03/20 14:51:09] detectron2.data.dataset_mapper INFO: [DatasetMapper] Augmentations used in inference: [ResizeShortestEdge(short_edge_length=(800, 800), max_size=1333, sample_style='choice')]
+[03/20 14:51:09] detectron2.data.common INFO: Serializing 162 elements to byte tensors and concatenating them all ...
+[03/20 14:51:09] detectron2.data.common INFO: Serialized dataset takes 6.21 MiB
+[03/20 14:51:09] detectron2.evaluation.coco_evaluation WARNING: COCO Evaluator instantiated using config, this is deprecated behavior. Please pass in explicit arguments instead.
+[03/20 14:51:10] detectron2.evaluation.evaluator INFO: Start inference on 81 batches
+[03/20 14:51:22] detectron2.evaluation.evaluator INFO: Inference done 11/81. Dataloading: 0.0011 s/iter. Inference: 0.0509 s/iter. Eval: 0.0306 s/iter. Total: 0.0827 s/iter. ETA=0:00:05
+[03/20 14:51:27] detectron2.evaluation.evaluator INFO: Inference done 66/81. Dataloading: 0.0018 s/iter. Inference: 0.0574 s/iter. Eval: 0.0311 s/iter. Total: 0.0905 s/iter. ETA=0:00:01
+[03/20 14:51:29] detectron2.evaluation.evaluator INFO: Total inference time: 0:00:07.640518 (0.100533 s / iter per device, on 2 devices)
+[03/20 14:51:29] detectron2.evaluation.evaluator INFO: Total inference pure compute time: 0:00:04 (0.058893 s / iter per device, on 2 devices)
+[03/20 15:12:51] detectron2.data.datasets.coco INFO: Loaded 162 images in COCO format from /ldap_shared/home/t_jyy/ssd/home/jiangyiyu/unit3code/mydata/step5_augmented/instances_val.json
+[03/20 15:12:51] detectron2.data.dataset_mapper INFO: [DatasetMapper] Augmentations used in inference: [ResizeShortestEdge(short_edge_length=(800, 800), max_size=1333, sample_style='choice')]
+[03/20 15:12:51] detectron2.data.common INFO: Serializing 162 elements to byte tensors and concatenating them all ...
+[03/20 15:12:51] detectron2.data.common INFO: Serialized dataset takes 6.21 MiB
+[03/20 15:12:51] detectron2.evaluation.coco_evaluation WARNING: COCO Evaluator instantiated using config, this is deprecated behavior. Please pass in explicit arguments instead.
+[03/20 15:12:52] detectron2.evaluation.evaluator INFO: Start inference on 81 batches
+[03/20 15:13:04] detectron2.evaluation.evaluator INFO: Inference done 11/81. Dataloading: 0.0012 s/iter. Inference: 0.0420 s/iter. Eval: 0.0260 s/iter. Total: 0.0692 s/iter. ETA=0:00:04
+[03/20 15:13:09] detectron2.evaluation.evaluator INFO: Inference done 70/81. Dataloading: 0.0015 s/iter. Inference: 0.0553 s/iter. Eval: 0.0276 s/iter. Total: 0.0845 s/iter. ETA=0:00:00
+[03/20 15:13:11] detectron2.evaluation.evaluator INFO: Total inference time: 0:00:07.127930 (0.093789 s / iter per device, on 2 devices)
+[03/20 15:13:11] detectron2.evaluation.evaluator INFO: Total inference pure compute time: 0:00:04 (0.055082 s / iter per device, on 2 devices)
+[03/20 15:34:36] detectron2.data.datasets.coco INFO: Loaded 162 images in COCO format from /ldap_shared/home/t_jyy/ssd/home/jiangyiyu/unit3code/mydata/step5_augmented/instances_val.json
+[03/20 15:34:36] detectron2.data.dataset_mapper INFO: [DatasetMapper] Augmentations used in inference: [ResizeShortestEdge(short_edge_length=(800, 800), max_size=1333, sample_style='choice')]
+[03/20 15:34:36] detectron2.data.common INFO: Serializing 162 elements to byte tensors and concatenating them all ...
+[03/20 15:34:36] detectron2.data.common INFO: Serialized dataset takes 6.21 MiB
+[03/20 15:34:36] detectron2.evaluation.coco_evaluation WARNING: COCO Evaluator instantiated using config, this is deprecated behavior. Please pass in explicit arguments instead.
+[03/20 15:34:36] detectron2.evaluation.evaluator INFO: Start inference on 81 batches
+[03/20 15:34:49] detectron2.evaluation.evaluator INFO: Inference done 11/81. Dataloading: 0.0011 s/iter. Inference: 0.0478 s/iter. Eval: 0.0255 s/iter. Total: 0.0744 s/iter. ETA=0:00:05
+[03/20 15:34:54] detectron2.evaluation.evaluator INFO: Total inference time: 0:00:05.897037 (0.077593 s / iter per device, on 2 devices)
+[03/20 15:34:54] detectron2.evaluation.evaluator INFO: Total inference pure compute time: 0:00:03 (0.041423 s / iter per device, on 2 devices)
+[03/20 15:56:15] detectron2.data.datasets.coco INFO: Loaded 162 images in COCO format from /ldap_shared/home/t_jyy/ssd/home/jiangyiyu/unit3code/mydata/step5_augmented/instances_val.json
+[03/20 15:56:15] detectron2.data.dataset_mapper INFO: [DatasetMapper] Augmentations used in inference: [ResizeShortestEdge(short_edge_length=(800, 800), max_size=1333, sample_style='choice')]
+[03/20 15:56:15] detectron2.data.common INFO: Serializing 162 elements to byte tensors and concatenating them all ...
+[03/20 15:56:15] detectron2.data.common INFO: Serialized dataset takes 6.21 MiB
+[03/20 15:56:15] detectron2.evaluation.coco_evaluation WARNING: COCO Evaluator instantiated using config, this is deprecated behavior. Please pass in explicit arguments instead.
+[03/20 15:56:16] detectron2.evaluation.evaluator INFO: Start inference on 81 batches
+[03/20 15:56:29] detectron2.evaluation.evaluator INFO: Inference done 11/81. Dataloading: 0.0024 s/iter. Inference: 0.0841 s/iter. Eval: 0.0250 s/iter. Total: 0.1115 s/iter. ETA=0:00:07
+[03/20 15:56:34] detectron2.evaluation.evaluator INFO: Inference done 71/81. Dataloading: 0.0017 s/iter. Inference: 0.0586 s/iter. Eval: 0.0262 s/iter. Total: 0.0866 s/iter. ETA=0:00:00
+[03/20 15:56:35] detectron2.evaluation.evaluator INFO: Total inference time: 0:00:07.236909 (0.095222 s / iter per device, on 2 devices)
+[03/20 15:56:35] detectron2.evaluation.evaluator INFO: Total inference pure compute time: 0:00:04 (0.058081 s / iter per device, on 2 devices)
+[03/20 16:17:22] detectron2.data.datasets.coco INFO: Loaded 162 images in COCO format from /ldap_shared/home/t_jyy/ssd/home/jiangyiyu/unit3code/mydata/step5_augmented/instances_val.json
+[03/20 16:17:22] detectron2.data.dataset_mapper INFO: [DatasetMapper] Augmentations used in inference: [ResizeShortestEdge(short_edge_length=(800, 800), max_size=1333, sample_style='choice')]
+[03/20 16:17:22] detectron2.data.common INFO: Serializing 162 elements to byte tensors and concatenating them all ...
+[03/20 16:17:22] detectron2.data.common INFO: Serialized dataset takes 6.21 MiB
+[03/20 16:17:22] detectron2.evaluation.coco_evaluation WARNING: COCO Evaluator instantiated using config, this is deprecated behavior. Please pass in explicit arguments instead.
+[03/20 16:17:23] detectron2.evaluation.evaluator INFO: Start inference on 81 batches
+[03/20 16:17:35] detectron2.evaluation.evaluator INFO: Inference done 11/81. Dataloading: 0.0010 s/iter. Inference: 0.0492 s/iter. Eval: 0.0204 s/iter. Total: 0.0706 s/iter. ETA=0:00:04
+[03/20 16:17:40] detectron2.evaluation.evaluator INFO: Inference done 77/81. Dataloading: 0.0015 s/iter. Inference: 0.0495 s/iter. Eval: 0.0244 s/iter. Total: 0.0754 s/iter. ETA=0:00:00
+[03/20 16:17:41] detectron2.evaluation.evaluator INFO: Total inference time: 0:00:06.437780 (0.084708 s / iter per device, on 2 devices)
+[03/20 16:17:41] detectron2.evaluation.evaluator INFO: Total inference pure compute time: 0:00:03 (0.050162 s / iter per device, on 2 devices)
+[03/20 16:37:29] detectron2.data.datasets.coco INFO: Loaded 162 images in COCO format from /ldap_shared/home/t_jyy/ssd/home/jiangyiyu/unit3code/mydata/step5_augmented/instances_val.json
+[03/20 16:37:29] detectron2.data.dataset_mapper INFO: [DatasetMapper] Augmentations used in inference: [ResizeShortestEdge(short_edge_length=(800, 800), max_size=1333, sample_style='choice')]
+[03/20 16:37:29] detectron2.data.common INFO: Serializing 162 elements to byte tensors and concatenating them all ...
+[03/20 16:37:30] detectron2.data.common INFO: Serialized dataset takes 6.21 MiB
+[03/20 16:37:30] detectron2.evaluation.coco_evaluation WARNING: COCO Evaluator instantiated using config, this is deprecated behavior. Please pass in explicit arguments instead.
+[03/20 16:37:30] detectron2.evaluation.evaluator INFO: Start inference on 81 batches
+[03/20 16:37:42] detectron2.evaluation.evaluator INFO: Inference done 11/81. Dataloading: 0.0011 s/iter. Inference: 0.0397 s/iter. Eval: 0.0198 s/iter. Total: 0.0606 s/iter. ETA=0:00:04
+[03/20 16:37:47] detectron2.evaluation.evaluator INFO: Inference done 78/81. Dataloading: 0.0014 s/iter. Inference: 0.0488 s/iter. Eval: 0.0238 s/iter. Total: 0.0740 s/iter. ETA=0:00:00
+[03/20 16:37:48] detectron2.evaluation.evaluator INFO: Total inference time: 0:00:06.242394 (0.082137 s / iter per device, on 2 devices)
+[03/20 16:37:48] detectron2.evaluation.evaluator INFO: Total inference pure compute time: 0:00:03 (0.048883 s / iter per device, on 2 devices)
+[03/20 16:57:31] detectron2.data.datasets.coco INFO: Loaded 162 images in COCO format from /ldap_shared/home/t_jyy/ssd/home/jiangyiyu/unit3code/mydata/step5_augmented/instances_val.json
+[03/20 16:57:31] detectron2.data.dataset_mapper INFO: [DatasetMapper] Augmentations used in inference: [ResizeShortestEdge(short_edge_length=(800, 800), max_size=1333, sample_style='choice')]
+[03/20 16:57:31] detectron2.data.common INFO: Serializing 162 elements to byte tensors and concatenating them all ...
+[03/20 16:57:31] detectron2.data.common INFO: Serialized dataset takes 6.21 MiB
+[03/20 16:57:31] detectron2.evaluation.coco_evaluation WARNING: COCO Evaluator instantiated using config, this is deprecated behavior. Please pass in explicit arguments instead.
+[03/20 16:57:31] detectron2.evaluation.evaluator INFO: Start inference on 81 batches
+[03/20 16:57:43] detectron2.evaluation.evaluator INFO: Inference done 11/81. Dataloading: 0.0010 s/iter. Inference: 0.0495 s/iter. Eval: 0.0193 s/iter. Total: 0.0698 s/iter. ETA=0:00:04
+[03/20 16:57:48] detectron2.evaluation.evaluator INFO: Total inference time: 0:00:05.949977 (0.078289 s / iter per device, on 2 devices)
+[03/20 16:57:48] detectron2.evaluation.evaluator INFO: Total inference pure compute time: 0:00:03 (0.046672 s / iter per device, on 2 devices)
+[03/20 17:15:32] detectron2.engine.hooks INFO: Overall training speed: 39997 iterations in 2:41:43 (0.2426 s / it)
+[03/20 17:15:32] detectron2.engine.hooks INFO: Total training time: 2:44:10 (0:02:27 on hooks)
+[03/20 17:15:32] detectron2.data.datasets.coco INFO: Loaded 162 images in COCO format from /ldap_shared/home/t_jyy/ssd/home/jiangyiyu/unit3code/mydata/step5_augmented/instances_val.json
+[03/20 17:15:32] detectron2.data.dataset_mapper INFO: [DatasetMapper] Augmentations used in inference: [ResizeShortestEdge(short_edge_length=(800, 800), max_size=1333, sample_style='choice')]
+[03/20 17:15:32] detectron2.data.common INFO: Serializing 162 elements to byte tensors and concatenating them all ...
+[03/20 17:15:32] detectron2.data.common INFO: Serialized dataset takes 6.21 MiB
+[03/20 17:15:32] detectron2.evaluation.coco_evaluation WARNING: COCO Evaluator instantiated using config, this is deprecated behavior. Please pass in explicit arguments instead.
+[03/20 17:15:32] detectron2.evaluation.evaluator INFO: Start inference on 81 batches
+[03/20 17:15:44] detectron2.evaluation.evaluator INFO: Inference done 11/81. Dataloading: 0.0009 s/iter. Inference: 0.0510 s/iter. Eval: 0.0194 s/iter. Total: 0.0713 s/iter. ETA=0:00:04
+[03/20 17:15:49] detectron2.evaluation.evaluator INFO: Total inference time: 0:00:06.021365 (0.079228 s / iter per device, on 2 devices)
+[03/20 17:15:49] detectron2.evaluation.evaluator INFO: Total inference pure compute time: 0:00:03 (0.046885 s / iter per device, on 2 devices)

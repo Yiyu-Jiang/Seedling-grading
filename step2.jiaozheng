@@ -1,0 +1,8 @@
+图像和标注文件位置/ldap_shared/home/t_jyy/ssd/home/jiangyiyu/unit3code/mydata/org_data
+
+检测图像中海绵育苗盘的四个顶点（左上、右上、右下、左下），保证将一张图中所有标注文件的mask均包含，
+基于四点计算透视变换，将托盘区域矫正为正视矩形图像。
+同时将对应 JSON 标注中的所有 polygon / bbox 坐标应用相同的透视变换，
+更新 imageWidth 和 imageHeight，并保持标注结构不变（禁止新增或删除标注点）。
+输出矫正后的图像、矫正后的 JSON 标注文件，并生成标注覆盖在矫正图上的 overlay 图用于验证，
+同时输出四角检测结果和变换矩阵。代码使用 Python + OpenCV 实现，并支持批量处理。

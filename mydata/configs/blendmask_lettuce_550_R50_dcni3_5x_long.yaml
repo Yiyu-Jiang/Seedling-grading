@@ -1,0 +1,38 @@
+_BASE_: "/ssd/home/jiangyiyu/unit3code/detectron2/AdelaiDet/configs/BlendMask/550_R_50_dcni3_5x.yaml"
+
+DATASETS:
+  TRAIN: ("lettuce_train",)
+  TEST: ("lettuce_val",)
+
+MODEL:
+  # 单类数据集
+  ROI_HEADS:
+    NUM_CLASSES: 1
+  FCOS:
+    NUM_CLASSES: 1
+  BASIS_MODULE:
+    # 自定义数据集未生成 BlendMask basis supervision (.npz)，长训也保持关闭。
+    LOSS_ON: False
+
+DATALOADER:
+  NUM_WORKERS: 2
+
+# 方案B：长训 10k iter
+SOLVER:
+  # 多卡训练：这里配置的是 global batch（所有 GPU 总和）。
+  # 8卡时建议使用 64（每卡 8 张），与单卡短训每卡 8 张保持一致。
+  IMS_PER_BATCH: 64
+  # 若你更倾向线性缩放学习率，可改为 0.016（=0.002*8）。
+  # 这里先保持 0.002，更稳，确认 loss 正常后再加大。
+  BASE_LR: 0.002
+  MAX_ITER: 10000
+  # 参考 WarmupMultiStepLR 的常见经验：在 70% / 90% 左右衰减
+  STEPS: (7000, 9000)
+  # warmup 通常取 max_iter 的 5%~10%，这里取 1000 作为稳妥默认
+  WARMUP_ITERS: 1000
+  CHECKPOINT_PERIOD: 1000
+
+TEST:
+  EVAL_PERIOD: 1000
+
+OUTPUT_DIR: "/ssd/home/jiangyiyu/unit3code/mydata/output/blendmask_lettuce_550_R50_long"

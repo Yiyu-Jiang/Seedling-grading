@@ -1,0 +1,10 @@
+请生成完整 Python 脚本并完善 /ssd/home/jiangyiyu/unit3code/step7_run.py：
+读取 /ssd/home/jiangyiyu/unit3code/mydata/output/test_blendmask_r50 中所有子图 image 和对应的实例分割预测 JSON，
+严格按照步骤1“先缩小原图到 1/2，再裁剪子图”的逻辑进行逆向恢复。
+必须先根据 /ssd/home/jiangyiyu/unit3code/mydata/org_img 中原始 JPG 图像的真实尺寸计算半尺寸整图大小，
+再完全复用步骤1的裁剪窗口参数，将所有子图结果先拼接到半尺寸整图全局坐标系中；
+禁止直接在原图全尺寸上拼接子图结果。拼接时，非重叠区域完整保留所有实例，重叠区域中对同一实例按整体完整性评分选择来源 tile，
+优先保留截断最少、面积最大、质心远离边界、轮廓最连续的一侧，舍弃边缘残片。
+拼接完成后，先生成半尺寸 overlay 并检查是否与半尺寸底图对齐，只有验证通过后，才允许使用最近邻插值将 mask 恢复到原图全分辨率。
+overlay 时底图必须使用原始 JPG，mask 必须与原图宽高完全一致，禁止不同尺寸直接叠加。最终输出半尺寸 mask、全尺寸 mask、实例属性 JSON、伪彩色 overlay 图和 stitch_summary.json，
+并增加严格的尺寸一致性与空间对齐检查，若半尺寸或全尺寸结果与底图明显错位，则报错停止。
