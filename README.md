@@ -3,4 +3,6 @@
 
 得到的最终分级结果如下图所示
 
-<img width="400" height="800" alt="IMG_20230613_195927_instances_with_polygon_ranked_instances_area_boxes_emptyholes" src="https://github.com/user-attachments/assets/3a689193-687a-4494-962c-66260bf4ae78" />
+<img width="400" height="800" alt="IMG_20230719_191057_instances_with_polygon_ranked_instances_area_boxes_emptyholes" src="https://github.com/user-attachments/assets/2676eeb7-e5e8-4af8-8248-d0526ce32552" />
+
+
