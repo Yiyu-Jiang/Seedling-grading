@@ -1,4 +1,4 @@
-<img width="400" height="800" alt="IMG_20230905_205508_instances_with_polygon_tray_holes_presence" src="https://github.com/user-attachments/assets/a0fa3001-986b-45c7-82ee-ad9568cf5954" />Reference for Basic Algorithms https://github.com/facebookresearch/detectron2
+Reference for Basic Algorithms https://github.com/facebookresearch/detectron2
 
 
 The final classification results obtained are shown in the following figure.
