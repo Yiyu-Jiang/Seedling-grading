@@ -1,0 +1,57 @@
+[OK] IMG_20230612_161330_instances_with_polygon: matches 186->186, empty 14->14
+[OK] IMG_20230612_161656_instances_with_polygon: matches 189->189, empty 11->11
+[OK] IMG_20230612_162308_instances_with_polygon: matches 180->186, empty 20->14
+[OK] IMG_20230613_195927_instances_with_polygon: matches 169->178, empty 31->22
+[OK] IMG_20230613_200341_instances_with_polygon: matches 186->186, empty 14->14
+[OK] IMG_20230613_200721_instances_with_polygon: matches 189->189, empty 11->11
+[OK] IMG_20230613_201025_instances_with_polygon: matches 184->185, empty 16->15
+[OK] IMG_20230719_191057_instances_with_polygon: matches 152->153, empty 48->47
+[OK] IMG_20230719_191406_instances_with_polygon: matches 169->169, empty 31->31
+[OK] IMG_20230719_191646_instances_with_polygon: matches 154->163, empty 46->37
+[OK] IMG_20230719_191920_instances_with_polygon: matches 146->161, empty 54->39
+[OK] IMG_20230720_184327_instances_with_polygon: matches 147->151, empty 53->49
+[OK] IMG_20230720_184736_instances_with_polygon: matches 165->167, empty 35->33
+[OK] IMG_20230720_185019_instances_with_polygon: matches 152->160, empty 48->40
+[OK] IMG_20230720_185320_instances_with_polygon: matches 149->164, empty 51->36
+[OK] IMG_20230721_184043_instances_with_polygon: matches 141->160, empty 59->40
+[OK] IMG_20230721_184513_instances_with_polygon: matches 158->170, empty 42->30
+[OK] IMG_20230721_184800_instances_with_polygon: matches 150->158, empty 50->42
+[OK] IMG_20230816_190329_instances_with_polygon: matches 174->174, empty 26->26
+[OK] IMG_20230816_190743_instances_with_polygon: matches 183->184, empty 17->16
+[OK] IMG_20230816_191215_instances_with_polygon: matches 152->159, empty 48->41
+[OK] IMG_20230816_191703_instances_with_polygon: matches 184->184, empty 16->16
+[OK] IMG_20230817_222251_instances_with_polygon: matches 174->174, empty 26->26
+[OK] IMG_20230817_222556_instances_with_polygon: matches 182->182, empty 18->18
+[OK] IMG_20230817_222941_instances_with_polygon: matches 148->155, empty 52->45
+[OK] IMG_20230817_223325_instances_with_polygon: matches 183->183, empty 17->17
+[OK] IMG_20230818_210538_instances_with_polygon: matches 174->174, empty 26->26
+[OK] IMG_20230818_211043_instances_with_polygon: matches 183->183, empty 17->17
+[OK] IMG_20230818_211548_instances_with_polygon: matches 149->149, empty 51->51
+[OK] IMG_20230818_212012_instances_with_polygon: matches 184->184, empty 16->16
+[OK] IMG_20230819_202626_instances_with_polygon: matches 174->174, empty 26->26
+[OK] IMG_20230819_203159_instances_with_polygon: matches 182->182, empty 18->18
+[OK] IMG_20230819_203702_instances_with_polygon: matches 154->154, empty 46->46
+[OK] IMG_20230819_204104_instances_with_polygon: matches 184->183, empty 16->17
+[OK] IMG_20230820_204205_instances_with_polygon: matches 163->164, empty 37->36
+[OK] IMG_20230820_204627_instances_with_polygon: matches 154->156, empty 46->44
+[OK] IMG_20230820_205056_instances_with_polygon: matches 187->188, empty 13->12
+[OK] IMG_20230821_200206_instances_with_polygon: matches 163->164, empty 37->36
+[OK] IMG_20230821_200606_instances_with_polygon: matches 149->154, empty 51->46
+[OK] IMG_20230821_201249_instances_with_polygon: matches 184->185, empty 16->15
+[OK] IMG_20230830_220911_instances_with_polygon: matches 185->185, empty 15->15
+[OK] IMG_20230831_135555_instances_with_polygon: matches 185->185, empty 15->15
+[OK] IMG_20230831_140106_instances_with_polygon: matches 184->184, empty 16->16
+[OK] IMG_20230901_202650_instances_with_polygon: matches 184->184, empty 16->16
+[OK] IMG_20230902_164058_instances_with_polygon: matches 181->181, empty 19->19
+[OK] IMG_20230903_120233_instances_with_polygon: matches 151->149, empty 49->51
+[OK] IMG_20230905_205508_instances_with_polygon: matches 165->165, empty 35->35
+[OK] IMG_20230906_191728_instances_with_polygon: matches 176->176, empty 24->24
+[OK] IMG_20230907_214323_instances_with_polygon: matches 169->170, empty 31->30
+[OK] IMG_20230930_144752_instances_with_polygon: matches 145->145, empty 55->55
+[OK] IMG_20231216_160811_instances_with_polygon: matches 179->181, empty 21->19
+[OK] IMG_20231218_105215_instances_with_polygon: matches 182->183, empty 18->17
+--- SUMMARY ---
+images_ok=40
+matches_total: 6687 -> 6823 (delta=136)
+empty_holes_total: 1313 -> 1177 (delta=-136)
+CSV saved: /ldap_shared/home/t_jyy/ssd/home/jiangyiyu/unit3code/mydata/output/step10_graph_merge_area_rank/gnn_before_after_summary.csv
