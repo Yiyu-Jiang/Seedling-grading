@@ -1,7 +1,0 @@
-请生成完整 Python 脚本：先安装并配置 X-AnyLabeling，
-读取 /ldap_shared/home/t_jyy/ssd/home/jiangyiyu/unit3code/mydata/step2_jiaozheng 中已有的标注文件*_corrected.jpg和对应的矫正后图像*_corrected.json，
-并将其转换/导入到 /ldap_shared/home/t_jyy/ssd/home/jiangyiyu/unit3code/mydata/org_img_label 中对应图像上，
-使这些图像能够在 X-AnyLabeling 中直接打开和继续标注。
-待全部实例分割标注完成后，再自动将 org_img_label 中的图像和 JSON 标注统一转换为 COCO 格式，
-输出完整的 COCO 标注文件和日志。要求转换过程中保持 X-AnyLabeling 格式兼容，
-并正确保留 polygon、bbox 和类别信息。同时生成标注覆盖在矫正图像上的 overlay 图，用于验证标注是否正确对齐。
