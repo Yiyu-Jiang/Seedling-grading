@@ -1,9 +1,8 @@
-基础算法参考https://github.com/facebookresearch/detectron2
+Reference for Basic Algorithms https://github.com/facebookresearch/detectron2
 
 
-得到的最终分级结果如下图所示
+The final classification results obtained are shown in the following figure.
 
 <img width="200" height="400" alt="IMG_20230719_191057_instances_with_polygon_ranked_instances_area_boxes_emptyholes" src="https://github.com/user-attachments/assets/2676eeb7-e5e8-4af8-8248-d0526ce32552" />
 
-其中蓝色圆圈为无苗、天蓝色方框为一级苗、红色方框为三级苗
-
+Among them, the blue circles represent seedlings without sprouts, the light blue squares represent first-grade seedlings, and the red squares represent third-grade seedlings.
