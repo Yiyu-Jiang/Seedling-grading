@@ -1,0 +1,54 @@
+image_stem,status,before_matches,before_empty_holes,after_matches,after_empty_holes,delta_matches,delta_empty_holes
+IMG_20230612_161330_instances_with_polygon,fallback:max(): Expected reduction dim to be specified for input.numel() == 0. Specify the reduction dim with the 'dim' argument.,186,14,186,14,0,0
+IMG_20230612_161656_instances_with_polygon,fallback:max(): Expected reduction dim to be specified for input.numel() == 0. Specify the reduction dim with the 'dim' argument.,189,11,189,11,0,0
+IMG_20230612_162308_instances_with_polygon,ok,180,20,186,14,6,-6
+IMG_20230613_195927_instances_with_polygon,ok,169,31,179,21,10,-10
+IMG_20230613_200341_instances_with_polygon,ok,186,14,186,14,0,0
+IMG_20230613_200721_instances_with_polygon,fallback:max(): Expected reduction dim to be specified for input.numel() == 0. Specify the reduction dim with the 'dim' argument.,189,11,189,11,0,0
+IMG_20230613_201025_instances_with_polygon,ok,184,16,185,15,1,-1
+IMG_20230719_191057_instances_with_polygon,ok,152,48,153,47,1,-1
+IMG_20230719_191406_instances_with_polygon,fallback:max(): Expected reduction dim to be specified for input.numel() == 0. Specify the reduction dim with the 'dim' argument.,169,31,169,31,0,0
+IMG_20230719_191646_instances_with_polygon,ok,154,46,162,38,8,-8
+IMG_20230719_191920_instances_with_polygon,ok,146,54,161,39,15,-15
+IMG_20230720_184327_instances_with_polygon,ok,147,53,150,50,3,-3
+IMG_20230720_184736_instances_with_polygon,ok,165,35,167,33,2,-2
+IMG_20230720_185019_instances_with_polygon,ok,152,48,160,40,8,-8
+IMG_20230720_185320_instances_with_polygon,ok,149,51,164,36,15,-15
+IMG_20230721_184043_instances_with_polygon,ok,141,59,159,41,18,-18
+IMG_20230721_184513_instances_with_polygon,ok,158,42,170,30,12,-12
+IMG_20230721_184800_instances_with_polygon,ok,150,50,158,42,8,-8
+IMG_20230721_185215_instances_with_polygon,failed_no_image,,,,,,
+IMG_20230816_190329_instances_with_polygon,ok,174,26,174,26,0,0
+IMG_20230816_190743_instances_with_polygon,ok,183,17,184,16,1,-1
+IMG_20230816_191215_instances_with_polygon,ok,152,48,159,41,7,-7
+IMG_20230816_191703_instances_with_polygon,ok,184,16,184,16,0,0
+IMG_20230817_222251_instances_with_polygon,ok,174,26,174,26,0,0
+IMG_20230817_222556_instances_with_polygon,ok,182,18,182,18,0,0
+IMG_20230817_222941_instances_with_polygon,ok,148,52,155,45,7,-7
+IMG_20230817_223325_instances_with_polygon,fallback:max(): Expected reduction dim to be specified for input.numel() == 0. Specify the reduction dim with the 'dim' argument.,183,17,183,17,0,0
+IMG_20230818_210538_instances_with_polygon,fallback:max(): Expected reduction dim to be specified for input.numel() == 0. Specify the reduction dim with the 'dim' argument.,174,26,174,26,0,0
+IMG_20230818_211043_instances_with_polygon,ok,183,17,183,17,0,0
+IMG_20230818_211548_instances_with_polygon,fallback:max(): Expected reduction dim to be specified for input.numel() == 0. Specify the reduction dim with the 'dim' argument.,149,51,149,51,0,0
+IMG_20230818_212012_instances_with_polygon,fallback:max(): Expected reduction dim to be specified for input.numel() == 0. Specify the reduction dim with the 'dim' argument.,184,16,184,16,0,0
+IMG_20230819_202626_instances_with_polygon,fallback:max(): Expected reduction dim to be specified for input.numel() == 0. Specify the reduction dim with the 'dim' argument.,174,26,174,26,0,0
+IMG_20230819_203159_instances_with_polygon,fallback:max(): Expected reduction dim to be specified for input.numel() == 0. Specify the reduction dim with the 'dim' argument.,182,18,182,18,0,0
+IMG_20230819_203702_instances_with_polygon,ok,154,46,154,46,0,0
+IMG_20230819_204104_instances_with_polygon,ok,184,16,183,17,-1,1
+IMG_20230820_204205_instances_with_polygon,ok,163,37,164,36,1,-1
+IMG_20230820_204627_instances_with_polygon,ok,154,46,156,44,2,-2
+IMG_20230820_205056_instances_with_polygon,ok,187,13,188,12,1,-1
+IMG_20230821_200206_instances_with_polygon,ok,163,37,164,36,1,-1
+IMG_20230821_200606_instances_with_polygon,ok,149,51,153,47,4,-4
+IMG_20230821_201249_instances_with_polygon,ok,184,16,185,15,1,-1
+IMG_20230830_220911_instances_with_polygon,fallback:max(): Expected reduction dim to be specified for input.numel() == 0. Specify the reduction dim with the 'dim' argument.,185,15,185,15,0,0
+IMG_20230831_135555_instances_with_polygon,ok,185,15,185,15,0,0
+IMG_20230831_140106_instances_with_polygon,ok,184,16,184,16,0,0
+IMG_20230901_202650_instances_with_polygon,ok,184,16,184,16,0,0
+IMG_20230902_164058_instances_with_polygon,ok,181,19,181,19,0,0
+IMG_20230903_120233_instances_with_polygon,ok,151,49,149,51,-2,2
+IMG_20230905_205508_instances_with_polygon,fallback:max(): Expected reduction dim to be specified for input.numel() == 0. Specify the reduction dim with the 'dim' argument.,165,35,165,35,0,0
+IMG_20230906_191728_instances_with_polygon,ok,176,24,176,24,0,0
+IMG_20230907_214323_instances_with_polygon,ok,169,31,171,29,2,-2
+IMG_20230930_144752_instances_with_polygon,ok,145,55,145,55,0,0
+IMG_20231216_160811_instances_with_polygon,ok,179,21,181,19,2,-2
+IMG_20231218_105215_instances_with_polygon,ok,182,18,183,17,1,-1
